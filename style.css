@@ -1,0 +1,191 @@
+:root {
+    --cyan-color: hsl(179, 62%, 43%);
+    --bright-yellow: hsl(71, 73%, 54%);
+    --light-gray: hsl(204, 43%, 93%);
+    --grayish-blue: hsl(218, 22%, 67%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Karla', sans-serif;
+    font-size: 16px;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--light-gray);
+}
+
+main {
+    width: 50%;
+    min-width: 450px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+    "header header"
+    "price about";
+}
+
+header {
+    grid-area: header;
+    background-color: #fff;
+    padding: 2em;
+}
+
+h1 {
+    color: cyan;
+    padding-bottom: .5em;
+    font-weight: 700;
+}
+
+header h2 {
+    color: var(--bright-yellow);
+    padding-bottom: .25em;
+    font-weight: 700;
+}
+
+header p {
+    line-height: 1.5;
+    opacity: 0.7;
+}
+
+
+
+.price {
+   grid-area: price;
+   background-color: var(--cyan-color);
+   padding: 2em;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: flex-start;
+   color: #fff;
+}
+
+.price h2 {
+    margin-bottom: -1em;
+    font-weight: 400;
+}
+
+.price p {
+    opacity: 0.75;
+}
+
+.price-time {
+    display: flex;
+    align-items: center;
+}
+
+.price-1 {
+    font-weight: 700;
+    font-size: 3rem;
+}
+
+.time {
+    opacity: 0.4;
+    margin-left: .5em;
+}
+
+button {
+    background-color: var(--bright-yellow);
+    color: #fff;
+    font-family: 'Karla', sans-serif;
+    font-weight: 700;
+    width: 80%;
+    padding-block: 1em;
+    border: none;
+    border-radius: 5px;
+}
+
+.about {
+    grid-area: about;
+    background-color: var(--grayish-blue);
+    padding: 2em;
+    color: #fff;
+}
+
+.about h2 {
+    margin-bottom: 1em;
+    font-weight: 400;
+}
+
+.about p {
+    line-height: 1.5;
+    opacity: 0.75;
+}
+
+@media (max-width: 555px) {
+
+    body {
+        font-family: 'Karla', sans-serif;
+        font-size: 16px;
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--light-gray);
+    }
+
+    main {
+        min-width: 75%;
+        max-width: 300px;
+        margin: 0 auto;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas: 
+        "header"
+        "price"
+        "about";
+    }
+
+    header {
+        grid-area: header;
+        padding-block: 2em;
+        padding-inline: 1em;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    .price {
+        padding: 2em 1em;
+    }
+
+    .price p {
+        margin-top: -1em;
+    }
+
+    .price-time {
+        margin-top: 1em;
+    }
+
+    .price-1 {
+        font-size: 2rem;
+    }
+
+    button {
+        width: 100%;
+        padding-block: 1.5em;
+
+    }
+
+    .about {
+        padding: 2em 1em;
+    }
+
+
+}
